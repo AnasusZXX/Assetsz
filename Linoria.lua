@@ -10,12 +10,7 @@ local ScreenGui = Instance.new("ScreenGui")
 
 ScreenGui.Name = "Linoria"
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
-
-if not gethui then 
-    ScreenGui.Parent = CoreGui
-else 
-    ScreenGui.Parent = cloneref(gethui())
-end
+ScreenGui.Parent = CoreGui
 
 local Toggles = {}
 local Options = {}

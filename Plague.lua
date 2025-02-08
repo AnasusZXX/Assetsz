@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 local PCR_1 = Instance.new("ScreenGui")
 local TweenService = game:GetService('TweenService');
 local uis = game:GetService("UserInputService")
@@ -674,7 +675,7 @@ limit1.Size = UDim2.new(0, 588, 0, 364)
 limit1.ZIndex = 5
 
 
-repeat wait() until game.Players.LocalPlayer
+repeat wait() until game:GetService("Players").LocalPlayer
 
 
 

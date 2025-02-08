@@ -1,16 +1,28 @@
+---@diagnostic disable: undefined-global
 local InputService = game:GetService("UserInputService")
 local TextService = game:GetService("TextService")
-local TweenService = game:GetService("TweenService")
-local CoreGui = cloneref(game:GetService("CoreGui"))
+local CoreGui = gethui() or cloneref(game:GetService("CoreGui"))
+local CollectionService = game:GetService("CollectionService")
 local RenderStepped = game:GetService("RunService").RenderStepped
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
 
 local ScreenGui = Instance.new("ScreenGui")
 
-ScreenGui.Name = "Linoria"
+local GenerateString = function ()
+	local length = math.random(10,20)
+	local array = {}
+	for i = 1, length do
+		array[i] = string.char(math.random(32, 126))
+	end
+	return table.concat(array)
+end
+
+ScreenGui.Name = GenerateString()
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
 ScreenGui.Parent = CoreGui
+
+CollectionService:AddTag(ScreenGui, "Linoria")
 
 local Toggles = {}
 local Options = {}

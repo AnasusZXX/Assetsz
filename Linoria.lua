@@ -2,14 +2,9 @@
 local game = game
 local Workspace = workspace
 local type = type
-
-local getexecutorname = getexecutorname
-local cloneref = cloneref
-if getexecutorname() == "Xeno" then
-    cloneref = function(object)
-        return object
-    end
-end
+local tick = tick
+local pcall = pcall
+local setmetatable = setmetatable
 
 local math_random = math.random
 local math_floor = math.floor

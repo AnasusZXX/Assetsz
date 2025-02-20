@@ -1,4 +1,16 @@
 ---@diagnostic disable: undefined-global
+local game = game
+local Workspace = workspace
+local type = type
+
+local getexecutorname = getexecutorname
+local cloneref = cloneref
+if getexecutorname() == "Xeno" then
+    cloneref = function(object)
+        return object
+    end
+end
+
 local math_random = math.random
 local math_floor = math.floor
 local math_clamp = math.clamp
@@ -32,7 +44,7 @@ local instance_new = Instance.new
 
 local drawing_new = Drawing.new
 
-local vector2_new = Vector2.new 
+local vector2_new = Vector2.new
 
 local InputService = cloneref(game:GetService("UserInputService"))
 local TextService = cloneref(game:GetService("TextService"))

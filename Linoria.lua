@@ -5,6 +5,8 @@ local type = type
 local tick = tick
 local pcall = pcall
 local setmetatable = setmetatable
+local gethui = gethui
+local cloneref = cloneref
 
 local math_random = math.random
 local math_floor = math.floor
@@ -41,17 +43,17 @@ local drawing_new = Drawing.new
 
 local vector2_new = Vector2.new
 
-local InputService = cloneref(game:GetService("UserInputService"))
-local TextService = cloneref(game:GetService("TextService"))
+local InputService = game:GetService("UserInputService")
+local TextService = game:GetService("TextService")
 local CoreGui = gethui() or cloneref(game:GetService("CoreGui"))
-local CollectionService = cloneref(game:GetService("CollectionService"))
-local LocalPlayer = cloneref(game:GetService("Players").LocalPlayer)
-local Mouse = cloneref(LocalPlayer:GetMouse())
+local CollectionService = game:GetService("CollectionService")
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local Mouse = LocalPlayer:GetMouse()
 
 local ScreenGui = instance_new("ScreenGui")
 
 local GenerateString = function ()
-	local length = math_random(10,20)
+	local length = math_random(10, 20)
 	local array = {}
 
 	for i = 1, length do
